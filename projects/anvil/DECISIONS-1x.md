@@ -1,0 +1,122 @@
+# Anvil 1.x durable decisions, rules and conventions
+
+One line each: date the decision first appears (YYYY-MM-DD), the decision, source filename in parentheses. Grouped by area; within a group, chronological. Compiled only from the 28 project docs; nothing inferred beyond what they state. Note: the docs never use the phrase "three-role model"; the closest structural decisions are the 3-phase layout and the three-tier vendor scan, both listed below.
+
+## Repository structure and environment
+
+- 2026-07-28 Repo is organized as a 3-PHASE structure: `1-Collection\` (configurator, collectors, registry), `2-Evaluation\` (assembly prompt/schema, matrix JSON+XLSX, ingester, renderers), `3-Upload\` (Blacksmith runbooks), plus `skills\` and `Development\`; this superseded the same-day operator/developer split. (Project-Update-2026-07-28.md)
+- 2026-07-28 Client data lives under per-client roots `clients\<Client>\{config, evidence\<tool>\<UTCstamp>, manual-staging, guides, run-packages, determinations}`, pre-provisioned by the Configurator on profile save. (Project-Update-2026-07-28.md)
+- 2026-07-28 Pre-migration determinations carry old-layout evidence pointers and are historical records; do not "fix" them. (Project-Update-2026-07-28.md)
+- 2026-07-28 The cloud Cowork sandbox can run PowerShell 7, so GET-only collectors may be live-validated in-session; fresh sandboxes may need pwsh installed first (added 2026-07-29). (Project-Update-2026-07-28.md, Project-Update-2026-07-29.md)
+- 2026-07-29 Section 4 (`4-VendorRisk\`) is a fourth Anvil section managing Blacksmith Vendor Admin (Vendors + Business Systems). (Section4-VendorRisk-Plan-2026-07-29.md)
+- 2026-07-30 E:\Projects\Anvil on ws-ludus is the authoritative git repo (main, github.com/rpatrick-simvay/anvil); SharePoint is a working copy to be reconciled from E: after pushes. (Project-Update-2026-07-30.md, Section4-Brooklyn-Pipeline-Complete-2026-07-30.md)
+- 2026-07-31 Verify device writes with an on-device md5 (`device_bash`), not by re-staging the same path, because the sandbox mount cache can serve stale bytes. (Project-Update-2026-07-31.md)
+- 2026-08-07 Section 4 `4-VendorRisk\scans\` evidence stays consolidated on E:\ and is deliberately not mirrored to SharePoint; `vendor-scan.local.psd1` secrets are never synced. (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-07 Path rule for the vendor pipeline: `clients\` means the repo root, never a cwd-relative path; script defaults are script-anchored. (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-07 Session convention: changes are written to E:\ masters (and SharePoint where applicable) but left uncommitted for Ryan's review, test and commit. (Manual-Audit-and-Fixes-2026-08-07.md, GWS-Collector-v1.0-2026-08-09.md)
+
+## Evidence doctrine
+
+- 2026-07-28 Raw collector JSON is the SHA-256 anchor of evidence; evidence packet PDFs are the Blacksmith upload artifact. (Project-Update-2026-07-28.md)
+- 2026-07-28 Live MCP/connector data is never evidence; MCPs are for dev verification, lookups and sanity checks only (Hard Rule in the assembly prompt). (Project-Update-2026-07-28.md)
+- 2026-07-28 Secrets returned by APIs (Meraki PSKs, SNMP community strings, SNMPv3 passphrases) are redacted in evidence as `[REDACTED len=N]` by design; grep-verify no live secret lands in evidence. (Project-Update-2026-07-28.md)
+- 2026-07-28 Config backup content is deliberately not exported (Auvik); existence and recency is the evidence. (Project-Update-2026-07-28.md)
+- 2026-07-28 Ingest/hashing is the analyst attestation step in the manual evidence flow. (Project-Update-2026-07-28.md)
+- 2026-07-28 The Action1 audit trail is tenant-scoped in practice; the collector records the permission-gap fact on 0 events. (Project-Update-2026-07-28.md)
+- 2026-07-29 Absence is a fact: empty top-threats, "not enabled" VLANs, 403 "SIG not enabled", and 404 "no ransomware victims" are recorded as facts, not failures. (Project-Update-2026-07-29.md, Section4-Scoring-v1.1-2026-07-30.md)
+- 2026-07-30 Caps must be honest: every capped file self-declares `Capped=true`, and the evaluation rationale states cap honesty. (GWS-OFCS-Run-Review-2026-08-10.md, GWS-Platform-Integration-2026-08-10.md)
+- 2026-07-31 CISA Cyber Hygiene weekly report receipts are evidence for system info integrity-03; judge sender, recipient, dates and cadence only, never open, decrypt or infer contents. (Project-Update-2026-07-31.md)
+- 2026-07-31 The CISA report decryption password is never written into any Anvil evidence field; Add-ManualEvidence throws when a note looks like it carries a password. (Project-Update-2026-07-31.md)
+- 2026-07-31 CISA satisfaction bar: at least 4 consecutive weekly receipts inside 90 days, sender/recipient visible, cadence unbroken; STIX/TAXII or InfraGard remains an accepted alternate. (Project-Update-2026-07-31.md)
+- 2026-08-07 A manual run folder with files but no manifest is a FAILED INGEST, reported in those words, never an empty evidence set or a downgrade rationale; stale manifests use the manifested rows and name the uncitable files. (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-07 Manual evidence remains irreducible for: SIEM retention, NAT/port-forwarding, VPN client config, network diagrams, Veeam/backup items, restore-test form, Purview labels, Mimecast TLS policy screenshots, and stack-dependent firewall/SAT items when no covering collector exists. (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-07 Mimecast Secure Delivery/Receipt TLS, spam-scanning and inbound DNS-auth definitions are verified NOT API-readable; the Consolidated Policy Viewer screenshot (mc-tls) is the permanent evidence source; mc-ttp and mc-spam stay retired (Ryan, finalized). (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-10 Deliberately captured disabled states (e.g. the disabled IPsec VPN tab) are evidence in themselves. (OFCS-Manual-Collection-2026-08-10.md)
+
+## Evaluation conventions
+
+- 2026-07-28 The coverage matrix is the RUNNING LIST of every control ever discovered; unmapped stubs carry task text and framework refs until mapped; JSON is truth and XLSX is the human view. (Project-Update-2026-07-28.md)
+- 2026-07-28 Compliance-tab CSV export replaces the Chrome roadmap scrape; ingestion via Ingest-ComplianceExport is the standard pre-assembly step. (Project-Update-2026-07-28.md)
+- 2026-07-29 A fresh analyst-provided Compliance-tab CSV export is REQUIRED at every evaluation run; stop and ask if missing or stale. (Process-Changes-2026-07-29.md)
+- 2026-07-29 Carry-forward rule: Completed=true in the export, prior evaluation satisfied, prior run within 90 days, then the determination is carried forward verbatim (carried_forward / carried_from_run fields, counted as satisfied with its own summary line) and never re-evaluated. (Process-Changes-2026-07-29.md)
+- 2026-07-29 Every partial / gap / insufficient_evidence evaluation must carry remediation_steps (1-5 concrete steps with owner). (Process-Changes-2026-07-29.md)
+- 2026-07-29 Standard rendered outputs: evaluation-report PDF (Render-FullReport, full SHA-256 inventory) and gap-analysis PDF (Render-GapAnalysis, client-facing language), both using the exec-report brand system. (Process-Changes-2026-07-29.md)
+- 2026-07-29 Umbrella satisfaction doctrine: network-level resolution is the enforcement evidence; roaming-client gaps, stale agents and inactive AD identity attribution are CALLOUT detections, never a control fail on their own. (Project-Update-2026-07-29.md)
+- 2026-07-29 Umbrella `twoFactorEnable` is a local-only flag and not trustworthy as an MFA gap; verify the login path (SecureX/Duo) per admin before treating false as a finding. (Project-Update-2026-07-29.md)
+- 2026-07-30 identification-06: a dedicated decommissioned/disabled OU with retained (disabled, not deleted) accounts is accepted directory evidence; policy attestation is supplemental. (Project-Update-2026-07-30.md)
+- 2026-07-30 incident response-02: HaloPSA security-incident tickets are the tracking mechanism (manually staged, never live MCP); SOC-outsourced clients satisfy via contract/attestation plus Halo tickets. (Project-Update-2026-07-30.md)
+- 2026-07-31 Every partial/gap/insufficient finding carries first_action, an authored imperative one-liner of at most 100 chars that stands alone in the remediation table; renderers never truncate mid-word. (Project-Update-2026-07-31.md)
+- 2026-07-31 remediation-resources.json is the standing remediation reference (JSON truth, XLSX view); the prompt copies references VERBATIM, prefers verified links, max 3 per control, NEVER invents; misses go to summary.missing_reference_controls. (Project-Update-2026-07-31.md)
+- 2026-08-07 Matrix wiring is honest, not blind: an evidence id is wired to a control only when it actually evidences that control (e.g. a detection-rule inventory does not evidence logging-failure alerting). (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-10 Platform scoping (prompt v2.4): infer platform from TechStack when PrimaryPlatform is absent; wrong-platform absence is never a gap; neutral-source absence is genuinely missing. (GWS-Platform-Integration-2026-08-10.md)
+- 2026-08-10 The profile `Hybrid` bool is the on-prem-AD flag, not PrimaryPlatform='Hybrid'; read TechStack.ActiveDirectory. (GWS-Platform-Integration-2026-08-10.md)
+- 2026-08-10 By-definition satisfaction applies only when the vendor is actually enabled in TechStack (a SIEM name alone must not auto-satisfy). (GWS-Platform-Integration-2026-08-10.md)
+- 2026-08-10 Terminology standard: write "MFA", never "2SV" / "2-Step Verification", in all prose, docs, notes and reports; machine field names mirroring Google's Admin SDK keep Google's token so evidence stays schema-comparable. (GWS-Platform-Integration-2026-08-10.md)
+- 2026-08-11 A client with no Blacksmith profile is evaluated against the NIST CSF-tagged controls of the master matrix, with no carry-forward on a first run and assessment-only language. (OFCS-Evaluation-2026-08-11.md)
+
+## Blacksmith upload conventions (compliance)
+
+- 2026-07-28 Standard Blacksmith note format is mandatory: `[ANVIL <run-stamp>]` marker line plus Finding / Cleanup / Missing / Evidence / Basis; notes carry an evidence COUNT and a determinations-report pointer, never per-file hash lists; staging pastes VERBATIM; the marker is the idempotent re-staging skip signal. (Project-Update-2026-07-28.md)
+- 2026-07-28 Evidence packets (one branded PDF per evidence-carrying determination, 300-line raw appendix cap) are what staging uploads. (Project-Update-2026-07-28.md)
+- 2026-07-29 Upload runs autonomously to completion with real-time progress, no per-control stops; the analyst interjects if needed. (Process-Changes-2026-07-29.md)
+- 2026-07-29 Parallel subagents, one per status category (satisfied / partial / gap), each in its own Chrome tab with disjoint task lists. (Process-Changes-2026-07-29.md)
+- 2026-07-29 Ordering: incomplete controls first; Completed controls are reviewed only after all incomplete ones are current. (Process-Changes-2026-07-29.md)
+- 2026-07-29 Completed touch policy: modify a Completed task ONLY if evidence is more than 6 months old OR the note is not in the standard [ANVIL] format. (Process-Changes-2026-07-29.md)
+- 2026-07-29 Note policy: REPLACE notes wholesale on update (append-under-dated-header retired); evidence file uploads are never deleted by agents. (Process-Changes-2026-07-29.md)
+- 2026-07-29 `clients\<Client>\upload\<stamp>-staging-report.csv` is the per-task action record and cross-session memory, read at the start of each run. (Process-Changes-2026-07-29.md)
+- 2026-07-29 The Complete checkbox is never automated. (Process-Changes-2026-07-29.md, Anvil-2.0-Proposal-2026-08-31.md)
+
+## Collector rules and conventions
+
+- 2026-07-28 All collectors have a console close guard (keypress-to-close including on fatal errors) with `-NoPause` for automation. (Project-Update-2026-07-28.md)
+- 2026-07-28 Action1 `OrgId`, Meraki `MerakiOrgId`, and Auvik `AuvikTenantPrefix` are required profile fields because MSP keys see every client org; running without them lists visible orgs. (Project-Update-2026-07-28.md)
+- 2026-07-28 Configurator manifest entries add collectors with zero GUI code. (Project-Update-2026-07-28.md)
+- 2026-07-29 Umbrella keys are org-scoped, so `UmbrellaOrgId` is an optional assert (fail-fast on a wrong-client key), not a required selector. (Project-Update-2026-07-29.md)
+- 2026-07-29 PowerShell rule: never `return Invoke-RestMethod ...` directly (arrays un-enumerate); assign to a variable, then return it. (Project-Update-2026-07-29.md)
+- 2026-08-07 Pager rule: materialize `Items = @($items)` from an ArrayList; never hand a raw Generic.List to `@()` consumers (S1 v3.0 lines 343/387 defect class). (Bug-Review-FieldNotes-2026-08-07.md, GWS-Collector-v1.0-2026-08-09.md)
+- 2026-08-07 Accumulators use Generic.List + `.Add()` or direct `@()` seeding, never the `$x = if ... { @() }` pattern; partial runs still write manifests from `finally`. (Bug-Review-FieldNotes-2026-08-07.md)
+- 2026-08-07 Manifest keys `SupersededBy` (guide item retires when the covering collector is enabled), `Ext` (native file extension), and `NoBrowser` (omitted from the Chrome instructions) govern manual guide items. (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-07 Guide text fixes land in `collector-manifest.psd1`, then guides are regenerated; hand-patching generated guides is not the fix. (Bug-Review-FieldNotes-2026-08-07.md)
+- 2026-08-07 KB4 retries bounded on 5xx with a one-shot smaller-page fallback, then fails honestly through the sidecar/manifest path. (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-07 Mimecast policy-route probe harness is retained behind `-ProbePolicyRoutes` (default off) as a quarterly re-check; a future success is a change-of-state signal. (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-07 Temporary API keys shared for build/test are rolled after the session; credentials are held in tmpfs only and shredded. (Manual-Audit-and-Fixes-2026-08-07.md)
+- 2026-08-09 GWS auth is service account + domain-wide delegation impersonating a super-admin; the key file path is prompted at runtime and the key stays in the secrets store, never in profile or evidence. (GWS-Collector-v1.0-2026-08-09.md)
+- 2026-08-09 GWS uses per-scope-group tokens so a declined optional grant fails only that group's items; the three no-read-only-variant scopes are accepted informed decisions (Duo-settings pattern). (GWS-Collector-v1.0-2026-08-09.md)
+- 2026-08-09 GWS is school-aware per OU: profile declares staff/student OU paths and MFA, delegated admin and Chrome policy evidence are derived per OU. (GWS-Collector-v1.0-2026-08-09.md)
+- 2026-08-09 Google Admin console security policy screens are not API-readable; per-user enrollment/enforcement flags are the outcome evidence and the policy screens are the manual item `gws-security-settings`, captured per OU. (GWS-Collector-v1.0-2026-08-09.md)
+- 2026-08-10 GWS GCP project lives in the SCHOOL'S tenant using the global admin Simvay already holds; no billing account is ever linked; a dedicated svc- super-admin is still recommended for standing engagements. (GWS-Setup-OFCS-2026-08-10.md)
+- 2026-08-10 Cap policy: INVENTORY items are uncapped to 100k safety ceilings; SAMPLE items keep caps (TOKENS 300 users, AUDIT 3k/30d, GROUPS detail 100); Capped flags are carried into client_context. (GWS-Platform-Integration-2026-08-10.md)
+- 2026-08-10 PrimaryPlatform is a required three-way profile choice (M365 / GoogleWorkspace / Hybrid) gating M365-only fields and per-platform collector defaults. (GWS-Platform-Integration-2026-08-10.md)
+- 2026-08-10 Manual intake is prefix-convention plus wildcard: a file ingests when its name contains a known category token bounded by `-` or the extension dot; missing files and zero-match patterns are recorded as Failed rows. (Manual-Evidence-v2.0-2026-08-10.md)
+- 2026-08-10 Same-UTC-day manual re-runs append to the same run folder with sequential MAN-* ids. (Manual-Evidence-v2.0-2026-08-10.md)
+- 2026-08-10 Variable renames in collectors must be checked case-insensitively against the param block (`$clientProfile` equals `$ClientProfile`); use `$profileData` for internal profile data. (ADGP-v1.8-Hotfix-2026-08-10.md)
+- 2026-08-10 Collectors destined for DCs stick to the Windows PowerShell 5.1 parameter surface (`Out-File -FilePath`, never `-Path`). (ADGP-v1.8-Hotfix-2026-08-10.md)
+- 2026-08-10 Chrome-agent automation facts: the analyst pastes the GCP client ID (sensitive-number filter blocks the agent), key downloads need explicit analyst approval, and analyst-supplied exports are dropped directly into `manual-staging`. (GWS-Setup-OFCS-2026-08-10.md, OFCS-Manual-Collection-2026-08-10.md)
+
+## Section 4 vendor risk decisions
+
+- 2026-07-29 Scan engine: build our own passive scanner, not BitSight/SecurityScorecard; output is a Simvay-computed risk INDICATOR, explicitly not a commercial rating. (Section4-VendorRisk-Plan-2026-07-29.md, Project-Update-2026-07-29-Section4.md)
+- 2026-07-29 Master vendor list is versioned JSON (truth) plus regenerated XLSX in the repo; scope rule universal = present in 2+ clients OR part of the Simvay security stack, local = single client; universal vendors are scanned once and shared. (Section4-VendorRisk-Plan-2026-07-29.md, vendor-master-v1.0-2026-07-29.json)
+- 2026-07-29 OSINT monitoring cadence: weekly light sweep (create_trigger, not local cron) plus deep on-demand; alert only on real hits, quiet weeks recorded as "no new findings". (Section4-VendorRisk-Plan-2026-07-29.md)
+- 2026-07-29 The vendor pipeline stays SEPARATE from compliance: own evaluation, own exec report (client and portfolio modes), own upload skill; skills named anvil-vendor-evaluation and anvil-vendor-upload. (Project-Update-2026-07-29-Section4.md)
+- 2026-07-29 Evaluation basis is scan score plus Blacksmith-tracked fields; risk = scan posture times what the client has riding on the vendor; do ALL vendors listed in Blacksmith. (Project-Update-2026-07-29-Section4.md)
+- 2026-07-29 Shodan membership key lives in gitignored `vendor-scan.local.psd1` (resolution: param, local psd1, env var), never hardcoded. (Project-Update-2026-07-29-Section4.md)
+- 2026-07-29 Vendor upload hard rules: never archive/delete a vendor or business system (the red row icon is the analyst's), never delete an uploaded vendor document, write ONLY Evaluated Risk Rating, field problems become SuggestedFieldCorrections, insufficient_scan / not_assessed are never staged, the agent never clicks import. (Project-Update-2026-07-29-Section4.md)
+- 2026-07-29 Vendor marker is `[ANVIL-VENDOR <stamp>]`, deliberately different from compliance's `[ANVIL <stamp>]`, with replace-don't-append and a staging-report CSV as cross-session memory. (Project-Update-2026-07-29-Section4.md)
+- 2026-07-29 Auto-fill of security/technical vendors is sourced only from TechStack, collector inventory, or the master's universal record; unknown vendors are never guessed. (Section4-VendorRisk-Plan-2026-07-29.md, Project-Update-2026-07-29-Section4.md)
+- 2026-07-29 Vendor evaluation hard rules: 90-day scan staleness bar; `domain_inferred` blocks `acceptable`; KEV/Shodan are indicators not verdicts; universal scans are shared but risk is attributed client-specifically. (Project-Update-2026-07-29-Section4.md)
+- 2026-07-30 Fix evidence integrity before re-weighting; do not tune bands until a full sweep with the research tier is in, then re-check only after a second client portfolio. (Section4-Brooklyn-Scan-Review-2026-07-30.md, Section4-v2.0-ResearchTier-Result-2026-07-30.md)
+- 2026-07-30 Shodan is nulled when all resolved IPs are a CDN/WAF edge; GoDaddy/GCE shared hosting is deliberately still scored. (Section4-Scoring-v1.1-2026-07-30.md)
+- 2026-07-30 Module failures score null (renormalized away), never a floor: crt.sh empty/failed, headers on HTTP 400+, SSL Labs timeouts. (Section4-Scoring-v1.1-2026-07-30.md)
+- 2026-07-30 Composite scores built on fewer than 6 scored modules are flagged LowConfidence with visible ScanCoverage. (Section4-Scoring-v1.1-2026-07-30.md)
+- 2026-07-30 Direction: stop weighting marketing landing pages as the primary signal; prioritize announced breaches, ransomware, hygiene, BBB rating, HQ jurisdiction and subprocessors; non-API signals via a Claude-in-Chrome enrichment pass. (Section4-Scoring-v1.1-2026-07-30.md)
+- 2026-07-30 Scoring is penalty-only (Ryan): baseline composite from hygiene/exposure/trust modules; breach, ransomware, KEV and announced breach subtract on confirmed hits, dedupe the same incident, total penalty capped at 70; bands A85/B75/C65/D55. (Section4-v2.0-PenaltyOnly-Result-2026-07-30.md)
+- 2026-07-30 Three-tier vendor scan: Python API-tier collector scores nothing, research-tier agents work only from the trusted-source allowlist (Maine AG, CA AG, HHS OCR, SEC 8-K, HQ, subprocessor pages) with exact-name/domain matching, and `anvil_vendor_score.py` is the ONLY thing that scores. (Section4-v2.0-PenaltyOnly-Result-2026-07-30.md, Section4-v2.0-ResearchTier-Result-2026-07-30.md)
+- 2026-07-30 Blacksmith's Edit Vendor dialog has no separate Note field; the Evaluated Risk Rating is written as a compact one-line plus marker. (Section4-Brooklyn-Pipeline-Complete-2026-07-30.md)
+- 2026-07-30 Bulk CSV import into Blacksmith is analyst-owned; security-stack vendors are tied from the client's configurator profile (disabled collectors, e.g. Umbrella=false, are excluded). (Section4-Brooklyn-Pipeline-Complete-2026-07-30.md)
+- 2026-07-30 Portal-default MFA "Not Enforced" on vendors is treated as UNASSESSED (data-gap caveat and collection to-do), not a high-severity risk factor (vendor evaluation v1.1). (Section4-NEXT-SESSION-START-HERE.md)
+
+## Anvil 2.0 boundary decisions that constrain 1.x contracts
+
+- 2026-08-31 dlt pipeline data is never compliance evidence; evidence stays point-in-time hashed collector snapshots. (Anvil-2.0-Proposal-2026-08-31.md)
+- 2026-09-08 All 1.x contracts are kept by 2.0: evidence tree, manifests, matrix, prompt v2.4 / schema v2.3, renderers, Blacksmith runbook; the ship gate for a ported collector is a manifest diff against a fresh 1.x run. (Anvil-2.0-Plan-v1.0-2026-09-08.md)

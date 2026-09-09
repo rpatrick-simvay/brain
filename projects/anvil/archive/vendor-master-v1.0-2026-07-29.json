@@ -1,0 +1,5016 @@
+{
+  "version": "1.0",
+  "generated": "2026-07-29",
+  "source": "Blacksmith Vendor Admin scrape (live, per client)",
+  "snapshot_date": "2026-07-29",
+  "clients_sampled": [
+    "City of Brooklyn",
+    "Olmsted Township",
+    "City of Avon Lake",
+    "City of Fairview Park",
+    "City of Parma Heights",
+    "Great Lakes Brewing",
+    "Avon Local Schools"
+  ],
+  "clients_with_zero_vendors": [
+    "City of Parma Heights",
+    "Great Lakes Brewing"
+  ],
+  "raw_record_count": 102,
+  "unique_vendor_count": 86,
+  "scope_rule": "universal = present in 2+ clients OR part of the Simvay security stack; local = single client",
+  "import_template_columns": [
+    "Name",
+    "Criticality",
+    "Evaluated Risk Rating",
+    "MFA Status",
+    "Sensitive Data Types",
+    "Vendor Contact",
+    "Vendor Email",
+    "Vendor Phone",
+    "Internal Owner"
+  ],
+  "vendors": [
+    {
+      "vendor_id": "95-percent-group-inc",
+      "name": "95 Percent Group Inc.",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "95percentgroup.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "95percentgroup.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "95 Percent Group"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Valerie Kaminski",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "95 Percent Group"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Valerie Kaminski"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "accurate-controls",
+      "name": "Accurate Controls",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "accuratecontrols.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "accuratecontrols.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "Access Control/Cameras"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [],
+          "contact_name": "Support",
+          "contact_email": "support@accuratecontrols.com",
+          "contact_phone": "(920) 748-6603",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Access Control/Cameras"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "support@accuratecontrols.com",
+        "phone": "(920) 748-6603"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "action1",
+      "name": "Action1",
+      "aliases": [
+        "Action1 Corporation"
+      ],
+      "scope": "universal",
+      "simvay_stack": true,
+      "primary_domain": "action1.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "action1.com"
+      ],
+      "client_count": 3,
+      "clients": {
+        "Olmsted Township": {
+          "business_systems": [
+            "Action1"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "City of Avon Lake": {
+          "business_systems": [
+            "Action1"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "Avon Local Schools": {
+          "business_systems": [
+            "Action1 [ARCHIVED]"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "NPI",
+            "PCI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "+1-346-444-8530",
+          "internal_owner": "Adam Johnson",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Action1",
+        "Action1 [ARCHIVED]"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO",
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Johnson",
+        "Simvay"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "active911",
+      "name": "Active911",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "active911.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "active911.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Olmsted Township": {
+          "business_systems": [
+            "ActiveAlert"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "support@active911.com",
+          "contact_phone": "(541) 223-7992",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "ActiveAlert"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "support@active911.com",
+        "phone": "(541) 223-7992"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "adobe",
+      "name": "Adobe",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "adobe.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "adobe.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Adobe Creative Cloud Suite"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "NPI",
+            "PII"
+          ],
+          "contact_name": "Support",
+          "contact_email": "",
+          "contact_phone": "800-915-9428",
+          "internal_owner": "Robert Rua",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Adobe Creative Cloud Suite"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "",
+        "phone": "800-915-9428"
+      },
+      "internal_owners": [
+        "Robert Rua"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "amplify",
+      "name": "Amplify",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "amplify.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "amplify.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Dibels"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Brian Coffey",
+          "contact_email": "bcoffey@amplify.com",
+          "contact_phone": "",
+          "internal_owner": "Valerie Kaminski",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Dibels"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Brian Coffey",
+        "email": "bcoffey@amplify.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Valerie Kaminski"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "apple",
+      "name": "Apple",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "apple.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "apple.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Apple School Manager [ARCHIVED]"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Enabled",
+          "data_types": [
+            "PII",
+            "NPI",
+            "PCI"
+          ],
+          "contact_name": "Woody Woodin",
+          "contact_email": "mwoodin@apple.com",
+          "contact_phone": "1-866-902-7144",
+          "internal_owner": "Adam Issa",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Apple School Manager [ARCHIVED]"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enabled"
+      ],
+      "vendor_contact": {
+        "name": "Woody Woodin",
+        "email": "mwoodin@apple.com",
+        "phone": "1-866-902-7144"
+      },
+      "internal_owners": [
+        "Adam Issa"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "beyondtrust",
+      "name": "BeyondTrust",
+      "aliases": [],
+      "scope": "universal",
+      "simvay_stack": true,
+      "primary_domain": "beyondtrust.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "beyondtrust.com"
+      ],
+      "client_count": 2,
+      "clients": {
+        "Olmsted Township": {
+          "business_systems": [
+            "BeyondTrust"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "City of Avon Lake": {
+          "business_systems": [
+            "BeyondTrust"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "BeyondTrust"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Simvay"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "bluebeam",
+      "name": "Bluebeam",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "bluebeam.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "bluebeam.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Bluebeam Revu"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Not Enforced",
+          "data_types": [],
+          "contact_name": "Support",
+          "contact_email": "support@bluebeam.com",
+          "contact_phone": "1-866-496-2140",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Bluebeam Revu"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "support@bluebeam.com",
+        "phone": "1-866-496-2140"
+      },
+      "internal_owners": [],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "bonefish-systems-llc",
+      "name": "Bonefish Systems LLC",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "bonefishsystems.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "bonefishsystems.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Customer Support",
+          "contact_email": "help@bonefishsystems.com",
+          "contact_phone": "6144273827",
+          "internal_owner": "Sadie Fox",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Customer Support",
+        "email": "help@bonefishsystems.com",
+        "phone": "6144273827"
+      },
+      "internal_owners": [
+        "Sadie Fox"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "boxcast",
+      "name": "Boxcast",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "boxcast.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "boxcast.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Boxcast"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [],
+          "contact_name": "Support",
+          "contact_email": "questions@boxcast.com",
+          "contact_phone": "888-392-2278",
+          "internal_owner": "Robert Rua",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Boxcast"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "questions@boxcast.com",
+        "phone": "888-392-2278"
+      },
+      "internal_owners": [
+        "Robert Rua"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "canva-pty-ltd",
+      "name": "Canva Pty Ltd.",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "canva.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "canva.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Canva"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Valerie Kaminski",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Canva"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Valerie Kaminski"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "castus",
+      "name": "Castus",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "castus.tv",
+      "domain_inferred": false,
+      "scan_domains": [
+        "castus.tv"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Castus"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [],
+          "contact_name": "Support",
+          "contact_email": "support@castus.tv",
+          "contact_phone": "1-800-215-3880",
+          "internal_owner": "Robert Rua",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Castus"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "support@castus.tv",
+        "phone": "1-800-215-3880"
+      },
+      "internal_owners": [
+        "Robert Rua"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "charter-spectrum",
+      "name": "Charter Spectrum",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "spectrum.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "spectrum.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Spectrum"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PCI",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Adam Johnson",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Spectrum"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PCI"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Johnson"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "cisco",
+      "name": "Cisco",
+      "aliases": [
+        "Cisco Umbrella"
+      ],
+      "scope": "universal",
+      "simvay_stack": true,
+      "primary_domain": "cisco.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "cisco.com"
+      ],
+      "client_count": 2,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "AnyConnect"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "MISSING MFA EVIDENCE",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "Avon Local Schools": {
+          "business_systems": [
+            "Cisco"
+          ],
+          "criticality": "High",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "NPI",
+            "PCI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Jeff Coleman",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "AnyConnect",
+        "Cisco"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PCI"
+      ],
+      "mfa_statuses": [
+        "Enforced",
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Jeff Coleman",
+        "Simvay"
+      ],
+      "flags": [
+        "MISSING MFA EVIDENCE"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "citizenserve",
+      "name": "Citizenserve",
+      "aliases": [
+        "CitizenServe"
+      ],
+      "scope": "universal",
+      "simvay_stack": false,
+      "primary_domain": "citizenserve.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "citizenserve.com"
+      ],
+      "client_count": 2,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "CitizenServe"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "",
+          "contact_phone": "(800) 325-9818",
+          "internal_owner": "Michael Greer",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "Olmsted Township": {
+          "business_systems": [
+            "Citizenserve"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PCI",
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Summer Hankins",
+          "contact_email": "summer@citizenserve.com",
+          "contact_phone": "(800) 325-9818",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "CitizenServe",
+        "Citizenserve"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "",
+        "phone": "(800) 325-9818"
+      },
+      "internal_owners": [
+        "Michael Greer",
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "civicplus",
+      "name": "CivicPlus",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "civicplus.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "civicplus.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [],
+          "criticality": "Low",
+          "mfa_status": "Not Enforced",
+          "data_types": [],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "Low",
+      "data_types_union": [],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "clever",
+      "name": "Clever",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "clever.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "clever.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Clever"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "PII",
+            "PCI",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Valerie Kaminski",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Clever"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Valerie Kaminski"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "communitycore",
+      "name": "CommunityCore",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "communitycore.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "communitycore.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Olmsted Township": {
+          "business_systems": [
+            "CommunityCore"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Jill Hudoletnjak",
+          "contact_email": "support@communitycore.com",
+          "contact_phone": "",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "CommunityCore"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Jill Hudoletnjak",
+        "email": "support@communitycore.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "connect",
+      "name": "CONNECT",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "powerschool.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "powerschool.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "PowerSchool"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "PHI/ePHI",
+            "PCI",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Adam Johnson",
+          "flags": "NO BAA UPLOADED",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "PowerSchool"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PHI/ePHI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Johnson"
+      ],
+      "flags": [
+        "NO BAA UPLOADED"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "courseware",
+      "name": "Courseware",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "edmentum.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "edmentum.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Edmentum INC"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Chad Schoolcraft",
+          "contact_email": "Chad.Schoolcraft@edmentum.com",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Edmentum INC"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Chad Schoolcraft",
+        "email": "Chad.Schoolcraft@edmentum.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "cox-enterprises",
+      "name": "Cox Enterprises",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "opengov.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "opengov.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Opengov"
+          ],
+          "criticality": "High",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "",
+          "contact_phone": "(650) 336-7167",
+          "internal_owner": "",
+          "flags": "MFA evidence 2026-03-11",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Opengov"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "",
+        "phone": "(650) 336-7167"
+      },
+      "internal_owners": [],
+      "flags": [
+        "MFA evidence 2026-03-11"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "dexcom-inc",
+      "name": "Dexcom, Inc.",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "dexcom.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "dexcom.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Dexcom"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Applicable",
+          "data_types": [
+            "PHI/ePHI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "NO BAA UPLOADED",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Dexcom"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "PHI/ePHI"
+      ],
+      "mfa_statuses": [
+        "Not Applicable"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [],
+      "flags": [
+        "NO BAA UPLOADED"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "diligent-corporation",
+      "name": "Diligent Corporation",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "diligent.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "diligent.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "Board Docs"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "support@boarddocs.com",
+          "contact_phone": "(866) 622-7326",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Board Docs"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "support@boarddocs.com",
+        "phone": "(866) 622-7326"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "docs-imaging",
+      "name": "DOCS Imaging",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "",
+      "domain_inferred": true,
+      "scan_domains": [],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Epicor Document Management"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "NPI",
+            "PII"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Epicor Document Management"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "dropbox",
+      "name": "Dropbox",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "dropbox.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "dropbox.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Dropbox"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "NPI",
+            "PII"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Dropbox"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "emergent",
+      "name": "Emergent",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "emergent.tech",
+      "domain_inferred": false,
+      "scan_domains": [
+        "emergent.tech"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "Emergent"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Brittney Fuller",
+          "contact_email": "bfuller@emergent.tech",
+          "contact_phone": "(458) 201-8289",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Emergent"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Brittney Fuller",
+        "email": "bfuller@emergent.tech",
+        "phone": "(458) 201-8289"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "esgi",
+      "name": "ESGI",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "esgisoftware.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "esgisoftware.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Riverside Assessments",
+            "ESGI (Riverside Assessments) [ARCHIVED]"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Valerie Kaminski",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "ESGI (Riverside Assessments) [ARCHIVED]",
+        "Riverside Assessments"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Valerie Kaminski"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "exaqvision",
+      "name": "Exaqvision",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "exacq.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "exacq.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Adam Johnson",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Johnson"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "final-forms",
+      "name": "Final Forms",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "finalforms.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "finalforms.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [],
+          "criticality": "Low",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Clayton T Burnett",
+          "contact_email": "clay@finalforms.com",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "MISSING MFA EVIDENCE",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Clayton T Burnett",
+        "email": "clay@finalforms.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [
+        "MISSING MFA EVIDENCE"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "fire-recovery-usa",
+      "name": "Fire Recovery USA",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "firerecoveryusa.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "firerecoveryusa.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "Fire Recovery USA"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "info@firerecoveryusa.com",
+          "contact_phone": "(888) 640-7222",
+          "internal_owner": "Kevin Paul",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Fire Recovery USA"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "info@firerecoveryusa.com",
+        "phone": "(888) 640-7222"
+      },
+      "internal_owners": [
+        "Kevin Paul"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "first-arriving",
+      "name": "First Arriving",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "firstarriving.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "firstarriving.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "First Arriving"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Support",
+          "contact_email": "",
+          "contact_phone": "(804) 451-3490",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "First Arriving"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "",
+        "phone": "(804) 451-3490"
+      },
+      "internal_owners": [],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "frontline",
+      "name": "Frontline",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "frontlineeducation.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "frontlineeducation.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Frontline Absence Managment"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "PHI/ePHI",
+            "PCI",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "NO BAA UPLOADED",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Frontline Absence Managment"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PHI/ePHI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [],
+      "flags": [
+        "NO BAA UPLOADED"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "godaddy-inc",
+      "name": "GoDaddy Inc.",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "godaddy.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "godaddy.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "GoDaddy"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PCI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Adam Johnson",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "GoDaddy"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PCI"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Johnson"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "gofmx",
+      "name": "GoFMX",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "gofmx.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "gofmx.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "FMX"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "support@gofmx.com",
+          "contact_phone": "+1 (844) 664-4400",
+          "internal_owner": "Bill Fishleigh",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "FMX"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "support@gofmx.com",
+        "phone": "+1 (844) 664-4400"
+      },
+      "internal_owners": [
+        "Bill Fishleigh"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "google",
+      "name": "Google",
+      "aliases": [],
+      "scope": "universal",
+      "simvay_stack": false,
+      "primary_domain": "google.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "google.com"
+      ],
+      "client_count": 2,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Google Workspace"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Robert Rua",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "Avon Local Schools": {
+          "business_systems": [
+            "Google Workspace"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "PII",
+            "PCI",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Adam Johnson",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Google Workspace"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced",
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Johnson",
+        "Robert Rua"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "hanwha-vision-america",
+      "name": "Hanwha Vision America",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "hanwhavisionamerica.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "hanwhavisionamerica.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Wisenet WAVE"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PCI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Adam Johnson",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Wisenet WAVE"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "PCI"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Johnson"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "healthems",
+      "name": "HealthEMS",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "sansio.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "sansio.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "HealthEMS"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "PHI/ePHI",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "theteam@sansio.com",
+          "contact_phone": "(218) 625-7000",
+          "internal_owner": "Kevin Paul",
+          "flags": "NO BAA UPLOADED",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "HealthEMS"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI",
+        "PHI/ePHI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "theteam@sansio.com",
+        "phone": "(218) 625-7000"
+      },
+      "internal_owners": [
+        "Kevin Paul"
+      ],
+      "flags": [
+        "NO BAA UPLOADED"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "henschen",
+      "name": "Henschen",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "henschen.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "henschen.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Henschen"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [],
+          "contact_name": "Support",
+          "contact_email": "courts@henschen.com",
+          "contact_phone": "(419) 352-5454",
+          "internal_owner": "Robert Rua",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Henschen"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "courts@henschen.com",
+        "phone": "(419) 352-5454"
+      },
+      "internal_owners": [
+        "Robert Rua"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "hmh-education-company",
+      "name": "HMH Education Company",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "hmhco.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "hmhco.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Math 180",
+            "NWEA",
+            "REad 180"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Lisa Jacobson",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Math 180",
+        "NWEA",
+        "REad 180"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Lisa Jacobson",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "hudl-inc",
+      "name": "Hudl, Inc.",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "hudl.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "hudl.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Hudl"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "PCI",
+            "NPI"
+          ],
+          "contact_name": "HUDL Support",
+          "contact_email": "support@hudl.com",
+          "contact_phone": "402-732-7879",
+          "internal_owner": "Mason Mazzola",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Hudl"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "HUDL Support",
+        "email": "support@hudl.com",
+        "phone": "402-732-7879"
+      },
+      "internal_owners": [
+        "Mason Mazzola"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "i3verticals",
+      "name": "i3Verticals",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "i3verticals.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "i3verticals.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "PaySchools Admin"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "PCI",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "support@payschools.com",
+          "contact_phone": "1-800-669-0792",
+          "internal_owner": "",
+          "flags": "Evaluated Risk Rating=High",
+          "evaluated_risk_rating": "High"
+        }
+      },
+      "business_systems": [
+        "PaySchools Admin"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "support@payschools.com",
+        "phone": "1-800-669-0792"
+      },
+      "internal_owners": [],
+      "flags": [
+        "Evaluated Risk Rating=High"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "iworq",
+      "name": "iWorq",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "iworq.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "iworq.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "iWorq"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "support@iWorq.com",
+          "contact_phone": "(435) 755-5126",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "iWorq"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "support@iWorq.com",
+        "phone": "(435) 755-5126"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "ixl-learning",
+      "name": "IXL Learning",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "ixl.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "ixl.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "IXL Learning, Diagnostics and Analytics"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Valerie Kaminski",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "IXL Learning, Diagnostics and Analytics"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Valerie Kaminski"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "key-bank",
+      "name": "Key Bank",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "key.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "key.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "Key Bank"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI",
+            "PCI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "",
+          "contact_phone": "(800) 539-2968",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Key Bank"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "",
+        "phone": "(800) 539-2968"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "knowbe4",
+      "name": "KnowBe4",
+      "aliases": [
+        "KnowBe4, Inc."
+      ],
+      "scope": "universal",
+      "simvay_stack": true,
+      "primary_domain": "knowbe4.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "knowbe4.com"
+      ],
+      "client_count": 2,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "KnowBe4"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Simvay",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "MFA evidence 2026-03-11",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "Avon Local Schools": {
+          "business_systems": [
+            "KnowBe4"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "PII",
+            "PCI"
+          ],
+          "contact_name": "Natasha Zeledón",
+          "contact_email": "natashaz@knowbe4.com",
+          "contact_phone": "",
+          "internal_owner": "Adam Issa",
+          "flags": "Evaluated Risk Rating=Not Yet Established",
+          "evaluated_risk_rating": "Not Yet Established"
+        }
+      },
+      "business_systems": [
+        "KnowBe4"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced",
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Simvay",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Issa",
+        "Simvay"
+      ],
+      "flags": [
+        "Evaluated Risk Rating=Not Yet Established",
+        "MFA evidence 2026-03-11"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "life-force-management",
+      "name": "Life Force Management",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "lifeforcemanagement.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "lifeforcemanagement.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "PHI/ePHI",
+            "PCI",
+            "NPI"
+          ],
+          "contact_name": "Chris Knapp",
+          "contact_email": "chris@Lifeforcemanagement.com",
+          "contact_phone": "800-700-4767",
+          "internal_owner": "Kevin Paul",
+          "flags": "NO BAA UPLOADED",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PHI/ePHI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Chris Knapp",
+        "email": "chris@Lifeforcemanagement.com",
+        "phone": "800-700-4767"
+      },
+      "internal_owners": [
+        "Kevin Paul"
+      ],
+      "flags": [
+        "NO BAA UPLOADED"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "magic-school-magic-student",
+      "name": "Magic School/Magic Student",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "magicschool.ai",
+      "domain_inferred": false,
+      "scan_domains": [
+        "magicschool.ai"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "MagicSchool"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "",
+          "contact_email": "lydia@magicschool.ai",
+          "contact_phone": "",
+          "internal_owner": "Valerie Kaminski",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "MagicSchool"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "lydia@magicschool.ai",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Valerie Kaminski"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "mcgraw-hill",
+      "name": "McGraw Hill",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "mheducation.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "mheducation.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Wonders / Study Sync"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Kimberly A Harvey",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Wonders / Study Sync"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Kimberly A Harvey",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "metadot",
+      "name": "Metadot",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "metadot.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "metadot.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Mojo Help Desk"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Adam Johnson",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Mojo Help Desk"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Johnson"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "microsoft-cloud",
+      "name": "Microsoft Cloud",
+      "aliases": [],
+      "scope": "universal",
+      "simvay_stack": true,
+      "primary_domain": "microsoft.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "microsoft.com"
+      ],
+      "client_count": 3,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "Olmsted Township": {
+          "business_systems": [
+            "Microsoft 365"
+          ],
+          "criticality": "High",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "MISSING MFA EVIDENCE",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "City of Avon Lake": {
+          "business_systems": [
+            "Microsoft 365",
+            "Microsoft Intune",
+            "Onedrive"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Microsoft Support",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "MFA evidence 2026-03-11; Evaluated Risk Rating=10",
+          "evaluated_risk_rating": "10"
+        }
+      },
+      "business_systems": [
+        "Microsoft 365",
+        "Microsoft Intune",
+        "Onedrive"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO",
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Microsoft Support",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Simvay"
+      ],
+      "flags": [
+        "MFA evidence 2026-03-11; Evaluated Risk Rating=10",
+        "MISSING MFA EVIDENCE"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "microsoft-on-premise",
+      "name": "Microsoft On-Premise",
+      "aliases": [],
+      "scope": "universal",
+      "simvay_stack": true,
+      "primary_domain": "microsoft.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "microsoft.com"
+      ],
+      "client_count": 3,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "Cisco"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "DATA QUIRK: business system named 'Cisco' linked to Microsoft On-Premise",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "Olmsted Township": {
+          "business_systems": [
+            "Microsoft File Share - Building Share (J)"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "City of Avon Lake": {
+          "business_systems": [
+            "Microsoft File Share - Common (S)",
+            "Microsoft File Share - Community Development (i)",
+            "Microsoft Active Directory",
+            "Microsoft File Share - Service (Y)",
+            "Microsoft File Share - Scans (Z)",
+            "Microsoft File Share - Engineering (J)",
+            "Microsoft File Share - Plotter Scans (K)",
+            "Microsoft File Share - Service Scans (R)",
+            "Microsoft File Share - ArcGIS (X)",
+            "Microsoft File Share - CCP (P)",
+            "Microsoft File Share - Personal Share (U)"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "Evaluated Risk Rating=20",
+          "evaluated_risk_rating": "20"
+        }
+      },
+      "business_systems": [
+        "Cisco",
+        "Microsoft Active Directory",
+        "Microsoft File Share - ArcGIS (X)",
+        "Microsoft File Share - Building Share (J)",
+        "Microsoft File Share - CCP (P)",
+        "Microsoft File Share - Common (S)",
+        "Microsoft File Share - Community Development (i)",
+        "Microsoft File Share - Engineering (J)",
+        "Microsoft File Share - Personal Share (U)",
+        "Microsoft File Share - Plotter Scans (K)",
+        "Microsoft File Share - Scans (Z)",
+        "Microsoft File Share - Service (Y)",
+        "Microsoft File Share - Service Scans (R)"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Simvay"
+      ],
+      "flags": [
+        "DATA QUIRK: business system named 'Cisco' linked to Microsoft On-Premise",
+        "Evaluated Risk Rating=20"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "mimecast",
+      "name": "Mimecast",
+      "aliases": [],
+      "scope": "universal",
+      "simvay_stack": true,
+      "primary_domain": "mimecast.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "mimecast.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Mimecast"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "MFA evidence 2026-03-11",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Mimecast"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Simvay"
+      ],
+      "flags": [
+        "MFA evidence 2026-03-11"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "mitel",
+      "name": "Mitel",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "mitel.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "mitel.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Mitel Connect Director"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Mitel Connect Director"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "mosyle-corporation",
+      "name": "Mosyle Corporation",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "mosyle.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "mosyle.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Mosyle School Manager"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "PII",
+            "NPI",
+            "PCI"
+          ],
+          "contact_name": "",
+          "contact_email": "security@mosyle.com",
+          "contact_phone": "",
+          "internal_owner": "Adam Issa",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Mosyle School Manager"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "security@mosyle.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Issa"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "motorola-solutions",
+      "name": "Motorola Solutions",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "motorolasolutions.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "motorolasolutions.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "WatchGuard"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "",
+          "contact_phone": "(800) 674-4357",
+          "internal_owner": "Scott Mielke",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "WatchGuard"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "",
+        "phone": "(800) 674-4357"
+      },
+      "internal_owners": [
+        "Scott Mielke"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "my-senior-center",
+      "name": "My Senior Center",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "myseniorcenter.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "myseniorcenter.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "My Senior Center"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "info@myseniorcenter.com",
+          "contact_phone": "(866) 739-9745",
+          "internal_owner": "Katie Tomek",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "My Senior Center"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "info@myseniorcenter.com",
+        "phone": "(866) 739-9745"
+      },
+      "internal_owners": [
+        "Katie Tomek"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "myrec",
+      "name": "MyRec",
+      "aliases": [],
+      "scope": "universal",
+      "simvay_stack": false,
+      "primary_domain": "myrec.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "myrec.com"
+      ],
+      "client_count": 2,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "MyRec"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PCI",
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "info@myrec.com",
+          "contact_phone": "(802) 465-9732",
+          "internal_owner": "Jack Abbruzzese",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "City of Avon Lake": {
+          "business_systems": [
+            "MyRec"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "support@myrec.com",
+          "contact_phone": "(802) 465-9732",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "MyRec"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "info@myrec.com",
+        "phone": "(802) 465-9732"
+      },
+      "internal_owners": [
+        "Jack Abbruzzese"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "nwea-map",
+      "name": "NWEA-Map",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "nwea.org",
+      "domain_inferred": true,
+      "scan_domains": [
+        "nwea.org"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Lisa Jacobson",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Lisa Jacobson",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "oktopost-hootsuite",
+      "name": "Oktopost/Hootsuite",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "hootsuite.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "hootsuite.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "Oktopost/Hootsuite"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Support",
+          "contact_email": "",
+          "contact_phone": "(646) 559-6157",
+          "internal_owner": "Jill Ludwig",
+          "flags": "MFA evidence 2026-04-30",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Oktopost/Hootsuite"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "",
+        "phone": "(646) 559-6157"
+      },
+      "internal_owners": [
+        "Jill Ludwig"
+      ],
+      "flags": [
+        "MFA evidence 2026-04-30"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "porter-lee-corporation",
+      "name": "Porter Lee Corporation",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "porterlee.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "porterlee.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "Beast"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "CJIS",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "support@porterlee.com",
+          "contact_phone": "(847) 985-2060",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Beast"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "CJIS",
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "support@porterlee.com",
+        "phone": "(847) 985-2060"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "right-stuff-software",
+      "name": "Right Stuff Software",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "",
+      "domain_inferred": true,
+      "scan_domains": [],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "6147341899",
+          "internal_owner": "Tom Raguz",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Tom Raguz"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "saavas",
+      "name": "Saavas",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "savvas.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "savvas.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Envisions Math"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Matt Stricker",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Envisions Math"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Matt Stricker",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "sage",
+      "name": "Sage",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "sage.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "sage.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Sage"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [],
+          "contact_name": "Support",
+          "contact_email": "",
+          "contact_phone": "(800) 261-0240",
+          "internal_owner": "Robert Rua",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Sage"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "",
+        "phone": "(800) 261-0240"
+      },
+      "internal_owners": [
+        "Robert Rua"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "samegoal",
+      "name": "SameGoal",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "samegoal.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "samegoal.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Same Goal Inc"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "SPII"
+          ],
+          "contact_name": "Andrew Hochhaus",
+          "contact_email": "legal@samegoal.com",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "MFA evidence 2026-07-02",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Same Goal Inc"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII",
+        "SPII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Andrew Hochhaus",
+        "email": "legal@samegoal.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [
+        "MFA evidence 2026-07-02"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "schoollinks",
+      "name": "SchoolLinks",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "schoolinks.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "schoolinks.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "School Links, Inc"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Mason Ratz",
+          "contact_email": "billing@schoolinks.com",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "School Links, Inc"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Mason Ratz",
+        "email": "billing@schoolinks.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "scorevision-llc",
+      "name": "ScoreVision, LLC",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "scorevision.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "scorevision.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "ScoreVision"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "ScoreVision Customer Service",
+          "contact_email": "Support@ScoreVision.com",
+          "contact_phone": "866-213-8680",
+          "internal_owner": "Mason Mazzola",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "ScoreVision"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced"
+      ],
+      "vendor_contact": {
+        "name": "ScoreVision Customer Service",
+        "email": "Support@ScoreVision.com",
+        "phone": "866-213-8680"
+      },
+      "internal_owners": [
+        "Mason Mazzola"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "screencastify-llc",
+      "name": "Screencastify LLC",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "screencastify.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "screencastify.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Screencastify"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Adam Johnson",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Screencastify"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Adam Johnson"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "scview",
+      "name": "SCView",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "scview.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "scview.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [],
+          "criticality": "High",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "CBI",
+            "PII",
+            "SPII"
+          ],
+          "contact_name": "Troy Stein",
+          "contact_email": "tstein@scview.com",
+          "contact_phone": "",
+          "internal_owner": "Sadie Fox",
+          "flags": "MISSING MFA EVIDENCE",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "High",
+      "data_types_union": [
+        "CBI",
+        "PII",
+        "SPII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Troy Stein",
+        "email": "tstein@scview.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Sadie Fox"
+      ],
+      "flags": [
+        "MISSING MFA EVIDENCE"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "sdpc-vendors",
+      "name": "SDPC Vendors",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "sdpc.a4l.org",
+      "domain_inferred": false,
+      "scan_domains": [
+        "sdpc.a4l.org"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [],
+          "criticality": "Low",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "DATA QUIRK: directory-listing placeholder (sdpc.a4l.org), not a single vendor",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [
+        "DATA QUIRK: directory-listing placeholder (sdpc.a4l.org), not a single vendor"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "se-blueprints",
+      "name": "SE Blueprints",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "seblueprint.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "seblueprint.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Olmsted Township": {
+          "business_systems": [
+            "PlanCycle"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Mark Mathies",
+          "contact_email": "mark@seblueprint.com",
+          "contact_phone": "216-241-2250",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "PlanCycle"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Mark Mathies",
+        "email": "mark@seblueprint.com",
+        "phone": "216-241-2250"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "sentinelone",
+      "name": "SentinelOne",
+      "aliases": [],
+      "scope": "universal",
+      "simvay_stack": true,
+      "primary_domain": "sentinelone.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "sentinelone.com"
+      ],
+      "client_count": 2,
+      "clients": {
+        "Olmsted Township": {
+          "business_systems": [
+            "SentinelOne"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "City of Avon Lake": {
+          "business_systems": [
+            "SentinelOne"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Simvay",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "SentinelOne"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Simvay"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "software-solutions-inc",
+      "name": "Software Solutions Inc.",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "mysoftwaresolutions.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "mysoftwaresolutions.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "VIP"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "info@mysoftwaresolutions.com",
+          "contact_phone": "(800) 686-5978",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "VIP"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "info@mysoftwaresolutions.com",
+        "phone": "(800) 686-5978"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "tac-computer-inc",
+      "name": "TAC Computer Inc.",
+      "aliases": [],
+      "scope": "universal",
+      "simvay_stack": false,
+      "primary_domain": "taccomputer.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "taccomputer.com"
+      ],
+      "client_count": 3,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "TAC"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI",
+            "CJIS"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Scott Mielke",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "Olmsted Township": {
+          "business_systems": [
+            "TAC"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Applicable",
+          "data_types": [
+            "PII",
+            "CJIS",
+            "NPI"
+          ],
+          "contact_name": "Tom Craven",
+          "contact_email": "tom@taccomputer.com",
+          "contact_phone": "",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "City of Fairview Park": {
+          "business_systems": [
+            "TAC"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Applicable",
+          "data_types": [
+            "PII",
+            "NPI",
+            "CJIS"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "simvay null",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "TAC"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "CJIS",
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Applicable",
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Tom Craven",
+        "email": "tom@taccomputer.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Ryan Patrick",
+        "Scott Mielke",
+        "simvay null"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "teach-town",
+      "name": "Teach Town",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "teachtown.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "teachtown.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Teach Town"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Kimberly A. Johnson",
+          "contact_email": "contracts@teachtown.com",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Teach Town"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Kimberly A. Johnson",
+        "email": "contracts@teachtown.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "test-nav",
+      "name": "Test Nav",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "pearson.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "pearson.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Pearson Education, Inc"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Da",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Pearson Education, Inc"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Da",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "the-baldwin-group-inc",
+      "name": "The Baldwin Group Inc.",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "baldwingroup.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "baldwingroup.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Brooklyn": {
+          "business_systems": [
+            "Mayors Court"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "CJIS",
+            "NPI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "support@baldwingroup.com",
+          "contact_phone": "(440) 891-9100",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Mayors Court"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "CJIS",
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "support@baldwingroup.com",
+        "phone": "(440) 891-9100"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "tyler-technologies",
+      "name": "Tyler Technologies",
+      "aliases": [],
+      "scope": "universal",
+      "simvay_stack": false,
+      "primary_domain": "tylertech.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "tylertech.com"
+      ],
+      "client_count": 2,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "Emergency Networking",
+            "CrewForce",
+            "Esuite",
+            "New World"
+          ],
+          "criticality": "High",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII",
+            "NPI",
+            "CJIS",
+            "PCI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "info@tylertech.com",
+          "contact_phone": "(972) 713-3700",
+          "internal_owner": "Robert Rua",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        },
+        "Avon Local Schools": {
+          "business_systems": [
+            "Traversa"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "Emily Budesheim",
+          "contact_email": "Emily.Budesheim@tylertech.com",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "CrewForce",
+        "Emergency Networking",
+        "Esuite",
+        "New World",
+        "Traversa"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "CJIS",
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO",
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "info@tylertech.com",
+        "phone": "(972) 713-3700"
+      },
+      "internal_owners": [
+        "Robert Rua"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "uan-ohio-state-auditor",
+      "name": "UAN Ohio State Auditor",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "ohioauditor.gov",
+      "domain_inferred": false,
+      "scan_domains": [
+        "ohioauditor.gov"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Olmsted Township": {
+          "business_systems": [
+            "UAN On-premise Server"
+          ],
+          "criticality": "Critical",
+          "mfa_status": "Not Applicable",
+          "data_types": [
+            "PII",
+            "NPI",
+            "PCI"
+          ],
+          "contact_name": "Support",
+          "contact_email": "UAN_support@ohioauditor.gov",
+          "contact_phone": "(800) 833-8261",
+          "internal_owner": "Ryan Patrick",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "UAN On-premise Server"
+      ],
+      "max_criticality": "Critical",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Applicable"
+      ],
+      "vendor_contact": {
+        "name": "Support",
+        "email": "UAN_support@ohioauditor.gov",
+        "phone": "(800) 833-8261"
+      },
+      "internal_owners": [
+        "Ryan Patrick"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "vector-solutions",
+      "name": "Vector Solutions",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "vectorsolutions.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "vectorsolutions.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "CrewSense",
+            "Check It"
+          ],
+          "criticality": "High",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Check It",
+        "CrewSense"
+      ],
+      "max_criticality": "High",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "verizon-communications-inc",
+      "name": "Verizon Communications Inc.",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "verizon.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "verizon.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Verizon"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "PII",
+            "PCI",
+            "NPI"
+          ],
+          "contact_name": "Denise Neitzel",
+          "contact_email": "",
+          "contact_phone": "330-635-9727",
+          "internal_owner": "Sadie Fox",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Verizon"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PCI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced"
+      ],
+      "vendor_contact": {
+        "name": "Denise Neitzel",
+        "email": "",
+        "phone": "330-635-9727"
+      },
+      "internal_owners": [
+        "Sadie Fox"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "vista-higher-learning",
+      "name": "Vista Higher Learning",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "vistahigherlearning.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "vistahigherlearning.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Vista Higher Learning Inc."
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Jason Jordan",
+          "contact_email": "jjordan@vistahigherlearning.com",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "MISSING MFA EVIDENCE",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Vista Higher Learning Inc."
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Jason Jordan",
+        "email": "jjordan@vistahigherlearning.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [
+        "MISSING MFA EVIDENCE"
+      ],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "voces-digital",
+      "name": "Voces Digital",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "vocesdigital.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "vocesdigital.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Classroom Voces Digital"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "David Wilson",
+          "contact_email": "info@vocesdigital.com",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Classroom Voces Digital"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "David Wilson",
+        "email": "info@vocesdigital.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "wayground-quizzez",
+      "name": "Wayground (Quizzez)",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "quizizz.com",
+      "domain_inferred": false,
+      "scan_domains": [
+        "quizizz.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [],
+          "criticality": "Low",
+          "mfa_status": "Enforced via SSO",
+          "data_types": [
+            "PII"
+          ],
+          "contact_name": "Daniella Plyavanich",
+          "contact_email": "privacy@quizizz.com",
+          "contact_phone": "",
+          "internal_owner": "Virginia Fitch",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Enforced via SSO"
+      ],
+      "vendor_contact": {
+        "name": "Daniella Plyavanich",
+        "email": "privacy@quizizz.com",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Virginia Fitch"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "when-i-work",
+      "name": "When I Work",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "wheniwork.com",
+      "domain_inferred": true,
+      "scan_domains": [
+        "wheniwork.com"
+      ],
+      "client_count": 1,
+      "clients": {
+        "City of Avon Lake": {
+          "business_systems": [
+            "When I Work"
+          ],
+          "criticality": "Medium",
+          "mfa_status": "Not Enforced",
+          "data_types": [
+            "PII",
+            "NPI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "When I Work"
+      ],
+      "max_criticality": "Medium",
+      "data_types_union": [
+        "NPI",
+        "PII"
+      ],
+      "mfa_statuses": [
+        "Not Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    },
+    {
+      "vendor_id": "zoom-communications-inc",
+      "name": "Zoom Communications, Inc.",
+      "aliases": [],
+      "scope": "local",
+      "simvay_stack": false,
+      "primary_domain": "zoom.us",
+      "domain_inferred": true,
+      "scan_domains": [
+        "zoom.us"
+      ],
+      "client_count": 1,
+      "clients": {
+        "Avon Local Schools": {
+          "business_systems": [
+            "Zoom"
+          ],
+          "criticality": "Low",
+          "mfa_status": "Enforced",
+          "data_types": [
+            "PCI"
+          ],
+          "contact_name": "",
+          "contact_email": "",
+          "contact_phone": "",
+          "internal_owner": "Mason Mazzola",
+          "flags": "",
+          "evaluated_risk_rating": "Not yet evaluated"
+        }
+      },
+      "business_systems": [
+        "Zoom"
+      ],
+      "max_criticality": "Low",
+      "data_types_union": [
+        "PCI"
+      ],
+      "mfa_statuses": [
+        "Enforced"
+      ],
+      "vendor_contact": {
+        "name": "",
+        "email": "",
+        "phone": ""
+      },
+      "internal_owners": [
+        "Mason Mazzola"
+      ],
+      "flags": [],
+      "last_scan_stamp": null,
+      "last_scan_score": null,
+      "last_osint_stamp": null
+    }
+  ]
+}
